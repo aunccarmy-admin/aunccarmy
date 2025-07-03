@@ -25,7 +25,8 @@ const PosterCard = ({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <div
+        <button
+          type="button"
           className={cn(
             "aspect-square h-auto cursor-pointer rounded border bg-muted transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
             isCarouselCard
@@ -40,7 +41,7 @@ const PosterCard = ({
             width={192}
             height={192}
           />
-        </div>
+        </button>
       </DialogTrigger>
       <DialogContent className="z-[150] p-3 lg:max-w-5xl">
         <div className="flex flex-col lg:flex-row lg:pr-2">

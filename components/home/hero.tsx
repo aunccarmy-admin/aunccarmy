@@ -84,6 +84,7 @@ const HeroContent = () => {
         </Button>
         <Link
           href="/about"
+          aria-label="Learn more about NCC"
           className={cn(
             buttonVariants({ variant: "secondary", size: "xl" }),
             "w-full border-2 border-foreground/10 dark:font-medium",

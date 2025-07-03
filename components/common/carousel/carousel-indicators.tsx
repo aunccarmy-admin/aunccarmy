@@ -56,10 +56,20 @@ export const useDotButton = (
 type PropType = ComponentPropsWithRef<"button">;
 
 export const DotButton: React.FC<PropType> = (props) => {
-  const { children, ...restProps } = props;
+  const { children, className, ...restProps } = props;
 
   return (
-    <button type="button" {...restProps}>
+    <button
+      type="button"
+      // Add relative, and use before for invisible touch area
+      className={cn(
+        "relative flex items-center justify-center",
+        "before:pointer-events-auto before:absolute before:inset-[-12px] before:bg-transparent before:content-['']",
+        className,
+      )}
+      style={{ minWidth: 0, minHeight: 0, padding: 0 }}
+      {...restProps}
+    >
       {children}
     </button>
   );

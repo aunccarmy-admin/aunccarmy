@@ -1,5 +1,5 @@
 import React from "react";
-import LogoTitle from "./logo-title";
+import LogoTitle from "../common/logo-title";
 import MainNav from "./nav/main-nav";
 import NavSheet from "./nav/nav-sheet";
 import { BottomCornerBoxes, RDiamond } from "@/components/common/decoration";
@@ -11,7 +11,9 @@ const Header = () => {
         <div className="relative border-l border-r">
           <BottomCornerBoxes child={<RDiamond />} />
           <div className="relative z-[100] mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 pb-3 pt-3">
-            <LogoTitle />
+            <div className="rounded-sm bg-background py-1.5 pl-3 pr-2">
+              <LogoTitle />
+            </div>
             <div className="flex items-center gap-4 xl:gap-6">
               <MainNav className="hidden md:block" />
             </div>

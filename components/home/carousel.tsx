@@ -55,6 +55,7 @@ const HomeCarousel = () => {
                 variant={"secondary"}
                 size={"icon"}
                 className="absolute bottom-2 right-2 rounded-sm opacity-0 shadow-md transition-opacity duration-300 group-hover:opacity-100"
+                aria-label="Open in fullscreen"
               >
                 <FullscreenIcon />
               </Button>
@@ -158,7 +159,6 @@ export const HomeCarouselSkeleton = () => {
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-center pb-4 pt-3 sm:justify-between">
         <div className="flex gap-2">
-          <Skeleton className="h-9 w-9 rounded-full" />
           <Skeleton className="h-9 w-9 rounded-full" />
           <Skeleton className="h-9 w-9 rounded-full" />
         </div>

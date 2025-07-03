@@ -73,6 +73,7 @@ export const PrevButton: React.FC<PropType> = (props) => {
       size={"icon"}
       variant={"outline"}
       className="rounded-full border-2"
+      aria-label="Previous slide"
       {...restProps}
     >
       <ChevronLeft />
@@ -89,6 +90,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       size={"icon"}
       variant={"outline"}
       className="rounded-full border-2"
+      aria-label="Next slide"
       {...restProps}
     >
       <ChevronRight />
@@ -163,6 +165,7 @@ export const AutoplayButton: React.FC<AutoplayButtonType> = (props) => {
       variant={"secondary"}
       onClick={props.onClick}
       className="rounded-full border"
+      aria-label={isPlaying ? "Pause autoplay" : "Play autoplay"}
       {...restProps}
     >
       {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
