@@ -5,6 +5,8 @@ import ReportView from "@/components/reports/report-view/report";
 import { cn } from "@/lib/utils";
 import GridPattern from "@/components/ui/grid-pattern";
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const reports = await getReports();
 
