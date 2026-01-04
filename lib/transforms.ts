@@ -96,11 +96,11 @@ export const getOrganizedCadetsByYear = (
           c.rank !== "CSM" &&
           c.rank !== "CQMS",
       )
-      .sort((a, b) => rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank))
       .sort(
         (a, b) =>
           platoonOrder.indexOf(a.platoon) - platoonOrder.indexOf(b.platoon),
-      ),
+      )
+      .sort((a, b) => rankOrder.indexOf(a.rank) - rankOrder.indexOf(b.rank)),
   };
 };
 
