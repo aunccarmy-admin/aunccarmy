@@ -91,11 +91,9 @@ const CadetList = () => {
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="flex flex-col gap-6">
-              {organizedCadets.others.map((cadet) => {
-                return <CadetCard key={cadet.id} cadet={cadet} />;
-              })}
-            </div>
+            {organizedCadets.others.map((cadet) => {
+              return <CadetCard key={cadet.id} cadet={cadet} />;
+            })}
           </div>
         </div>
       </div>

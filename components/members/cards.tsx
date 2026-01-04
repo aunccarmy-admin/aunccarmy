@@ -123,16 +123,20 @@ export const MemberCardSkeleton = () => {
 
 const AlumniIndicator = () => {
   return (
-    <RTooltip
-      content={
-        <span className="font-semibold tracking-wide text-primary">Alumni</span>
-      }
-      side="bottom"
-      className="bg-background"
-    >
-      <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
-        <HeartHandshake className="h-3.5 w-3.5" />
-      </div>
-    </RTooltip>
+    <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
+      <HeartHandshake className="mr-1 h-3.5 w-3.5" />
+      <div className="text-xs font-semibold">Alumni</div>
+    </div>
+    // <RTooltip
+    //   content={
+    //     <span className="font-semibold tracking-wide text-primary">Alumni</span>
+    //   }
+    //   side="bottom"
+    //   className="bg-background"
+    // >
+    //   <div className="absolute bottom-0 right-0 flex select-none items-center rounded-tl-sm border-b border-r bg-background p-1 px-2 text-primary xs:rounded-br-md">
+    //     <HeartHandshake className="h-3.5 w-3.5 mr-2" />
+    //   </div>
+    // </RTooltip>
   );
 };

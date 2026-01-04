@@ -87,7 +87,8 @@ export async function getYears(): Promise<number[]> {
       year: sql<number>`EXTRACT(YEAR FROM ${cadetTable.end_date})`.as("year"),
     })
     .from(cadetTable)
-    .groupBy(sql`year`);
+    .groupBy(sql`year`)
+    .orderBy(desc(sql`year`));
 
   return res.map((item) => item.year);
 }
