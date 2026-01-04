@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import ReportCarousel from "./carousel-preview";
 import ContentPreview from "./content-preview";
 import { Slide } from "@/types";
@@ -26,7 +26,9 @@ const ReportView = ({ report }: { report: SelectReport }) => {
               {report.location}
             </span>
             <span className={cn(report.date && "text-muted-foreground")}>
-              {report.date ? format(report.date, "PPP") : ""}
+              {report.date
+                ? formatInTimeZone(report.date, "Asia/Kolkata", "PPP")
+                : ""}
             </span>
           </div>
 

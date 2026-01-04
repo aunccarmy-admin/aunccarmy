@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog";
 import { SelectPoster } from "@/db/schema";
 import CldImage from "../common/cld-image";
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import { Button } from "../ui/button";
 import { Skeleton } from "../ui/skeleton";
 import { cn } from "@/lib/utils";
@@ -61,7 +61,13 @@ const PosterCard = ({
                 {poster.name && poster.name.length > 0 ? poster.name : "Poster"}
               </DialogTitle>
               <DialogDescription hidden>
-                {format(new Date(poster.date!), "MMMM dd, yyyy")}
+                {poster.date
+                  ? formatInTimeZone(
+                      poster.date,
+                      "Asia/Kolkata",
+                      "MMMM dd, yyyy",
+                    )
+                  : "No date provided"}
               </DialogDescription>
             </DialogHeader>
             <div className="hidden h-[460px] overflow-y-auto p-4 lg:block">
@@ -71,7 +77,11 @@ const PosterCard = ({
               <div className="w-fit">
                 <span className="text-sm text-muted-foreground">
                   {poster.date
-                    ? format(new Date(poster.date), "MMMM dd, yyyy")
+                    ? formatInTimeZone(
+                        poster.date,
+                        "Asia/Kolkata",
+                        "MMMM dd, yyyy",
+                      )
                     : "No date provided"}
                 </span>
               </div>

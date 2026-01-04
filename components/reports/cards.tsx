@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { format } from "date-fns";
+import { formatInTimeZone } from "date-fns-tz";
 import Link from "next/link";
 import { ReportMeta } from "@/db/queries/select";
 import CldImage from "@/components/common/cld-image";
@@ -50,7 +50,9 @@ export const ReportCard = ({
               className="self-end rounded-tl-sm border border-border/50 bg-muted/20 p-2 py-1 text-xs tracking-wide"
               dateTime={report.date?.toISOString()}
             >
-              {report.date ? format(report.date, "PPP") : ""}
+              {report.date
+                ? formatInTimeZone(report.date, "Asia/Kolkata", "PPP")
+                : ""}
             </time>
           </div>
         </CardContent>
